@@ -1,0 +1,13 @@
+%img-border{
+	border-radius: 50%;
+	border: 8px solid $img-border;
+	background-clip: padding-box;
+	background-color: $img-border;
+	transition-duration: .7s;
+}
+
+%centre-block{
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}

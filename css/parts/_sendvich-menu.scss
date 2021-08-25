@@ -1,0 +1,112 @@
+
+.header{
+	position: relative;
+	background-color:  $header;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+	flex: 0 0 auto;
+
+	&__logo{
+		padding-left: 20px;
+		width: 50%;
+		cursor: pointer;
+	}
+	
+	.nav{
+		&__list{
+			position: absolute;
+			right: -100%;
+			top: 100%;
+			transition-duration: .7s;
+			width: 320px;
+			list-style: none;
+			padding: 20px;
+			cursor: pointer;
+			background: $header;
+			
+			@media (min-width: 768px) {
+				position: static;
+				display: flex;
+				justify-content: center;
+				}
+		}
+
+		&__item{
+		padding: 5px;
+		}
+		
+		&__item:hover{
+			color: indianred;
+			text-shadow: 0px -1px 1px indigo;
+		}
+	}
+}
+
+
+.checker{
+	display: block;
+	width: 45px;
+	height: 45px;
+	border: 3px solid #000;
+	border-radius: 5px;
+	position: relative;
+	z-index: 50;
+
+	@media (min-width: 768px) {
+		display: none;
+	}
+
+	&::before,
+	&::after,
+	.sendwich-menu{
+		content: "";
+		position: absolute;
+		width: 30px;
+		height: 3px;
+		background-color: #000;
+		@extend %centre-block;
+		
+	}
+	
+	&::before{
+		top: 9px;
+	}
+	
+	&::after{
+		top: 75%;
+		
+	}
+}
+
+
+#checker{
+	display: none;
+	&:checked{
+		~ .nav__list{
+			right: 0;
+		}
+		~ .checker{
+			
+			&::before{
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%) rotate(45deg);
+				transition-duration: 1s;
+			}
+			
+			&::after{
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%) rotate(-45deg);
+			}
+			
+			.sendwich-menu{
+				display: none;		
+			}
+		}
+		
+	}
+	
+}

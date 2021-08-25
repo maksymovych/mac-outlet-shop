@@ -1,0 +1,15 @@
+.link-btn{
+	padding: 8px 25px;
+	color: currentColor;
+	border-radius: 3px;
+	border: 1px solid rgba(128, 128, 128, 0.383);
+	font-size: 14px;
+	min-width: 70px;
+	letter-spacing: .8px;
+}
+.link-btn:hover{
+	color: #fff;
+	background-color: $brown;
+	transition-duration: .5s;
+}
+
